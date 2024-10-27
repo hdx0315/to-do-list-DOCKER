@@ -1,3 +1,7 @@
+
+
+//backend/app.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -10,12 +14,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+
 app.use('/api/todos', todoRoutes);
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
-console.log('Mongo URI:', MONGO_URI); // Log the Mongo URI
 
 mongoose.connect(MONGO_URI, { })
   .then(() => {
